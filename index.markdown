@@ -4,4 +4,6 @@
 
 layout: default
 ---
-[new page]({{ site.baseurl }}{% link _posts/2021-08-28-welcome-to-jekyll.markdown %})
+
+# [Jekyll beginning]({{ site.baseurl }}{% link _posts/2021-08-28-Jekyll_beginning.markdown %})
+
