@@ -33,10 +33,12 @@ However, some pitfalls need to be noticed.
 
    Links to the content files in the markdown is commonly used, the path for the url ==can not== use `.` or `..` , one good way to link properly is to use [Liquid tags](https://jekyllrb.com/docs/liquid/tags/), such as
 
-   `[Jekyll beginning]({{ site.baseurl }}{% link _posts/2021-08-28-Jekyll_beginning.markdown %})`
-   
-   which can work properly
+   ```tex
+   [Jekyll beginning]({{ site.baseurl }}{% link _posts/2021-08-28-Jekyll_beginning.markdown %})
+   ```
 
+   which can work properly
+   
    
 
 
