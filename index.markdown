@@ -7,3 +7,6 @@ layout: default
 
 # [Jekyll beginning]({{ site.baseurl }}{% link _posts/2021-08-28-Jekyll_beginning.markdown %})
 
+
+
+# [Linux learning]({{ site.baseurl }}{% link _posts/2021-08-28-Linux_learning.markdown %})
