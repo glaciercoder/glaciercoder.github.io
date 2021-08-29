@@ -236,6 +236,28 @@ bg %1 # make it run at the background
 
 ## Signals
 
+```shell
+# kill send signals to programs
+kill -signal PID...
+# typical signal 
+INT # interrupt ctrl-C
+TERM # terminate
+STOP #
+TSTP # ctrl - Z
+CONT # continue
+kill -INT 13601
+# kill with no signals send TERM
+# killall is used tosend signals to multiple processes matching a specified program or username
+# poweroff halt reboot can be used without options
+# shutdown can be used as the above three commands
+sudo shutdown -h now
+sudo shutdown -r now
+```
+
+
+
+
+
 
 
 
