@@ -386,7 +386,47 @@ find ~ -type f -name 'foo*' -ok ls -l '{}' ';' # Attention the single quote here
 
 ## Archiving and Backup
 
+Compress can be lossless or lossy (JPEG or MP3), don not compress these files more than one time. Archiving means bundle up many files together into a single large file.
+
+```shell
+# gzip -> .gz / gunzip
+# bzip2 -> .bz2 / 
+# tar(tape archive) is commonly used
+tar mode[options] pathname #mode: c -create x -extract  r -append t -list
+tar cf playground.tar playground
+tar tf playground.tar
+tar xf ../playground.tar
+# All pathnames within the archieve are relative
+
+```
 
 
- 
+
+
+
+## Regular Expressions
+
+`grep` means *global regular expression print*
+
+```shell
+grep [options] regex [file...] 
+```
+
+*Literal characters* (zip...) and *metacharacters* are used in the regular expression.  
+
+ ```shell
+ ^ $ . [] {} - ? * + () | \ # should be used with quote
+ # The any character .
+ grep -h '.zip' dirlist*.txt # . is like * for wildcard
+ # Anchors ^ $
+ grep -h '^zip' dirlist*.txt # only zip are first three letters
+ grep -h 'zip$' dirlist*.txt # only zip are last three letters
+ grep -i '^..j.r$' /usr/share/dict/words
+ # Bracket expressions
+ grep -h '[bg]zip' dirlist*.txt # match between b and g
+ grep -h '[^bg]zip' dirlist*.txt #put ^ in the first place in the bracket means negation
+ grep -h '[A-Z]' dirlist*.txt # character range
+ ```
+
+
 
