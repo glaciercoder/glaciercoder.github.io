@@ -191,6 +191,8 @@ For files, wrx decides whether a file can be opened, written, or executed.  The 
 
 For directory, r allows a directory's contents to be listed if x is also set. w allows files within a directory to be created, deleted, and renamed if x is set. x allows a directory to be entered.
 
+Owner-Group-World
+
 ## chmod chown
 
 ```shell
@@ -338,6 +340,8 @@ apt-cache show package_name
 # find which package isntalled a file
 dpkg -S file_name 
 ```
+
+`wget` and `apt-get`: when running `wget -qO- http://example.com/path/to/script | sh`, it just run a remote script. While `apt-get` installs software from repository.
 
 
 
