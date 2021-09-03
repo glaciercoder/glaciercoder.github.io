@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "How to change shell for a certain user on Linux"
+title:  "How to change shell forcd .. a certain user on Linux"
 date:   2021-08-31 15:26:39 +0800
 categories: Linux
 ---
