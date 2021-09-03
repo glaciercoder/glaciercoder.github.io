@@ -25,10 +25,10 @@ Recently I found my Linux foundation rather weak, and felt it cool to have a goo
 
    ```shell
    ln -s item link # Create a symlink
-   # when we create a symbolic link, we are creating a text Chapter 4description of where the target file is relative to the symbolic link.
+   # when we create a symbolic link, we are creating a text description of where the target file is relative to the symbolic link.
    ln -s ../fun dir1/fun-sym 
    ln -s absolute_path sym
-   # symlink can be used on the dir
+   # symlink can be used on the dir whereas hardlink can't
    
    ```
 
@@ -90,7 +90,7 @@ Recently I found my Linux foundation rather weak, and felt it cool to have a goo
     # redirect error error
     ls -l /bin/usr 2> ls-error.txt # 2 is called file descriptor, 
     ls -l /bin/usr &> ls-output.txt # both stderr and stdout
-    # can also use 2>> nad &>>
+    # can also use 2>> and &>>
     ls -l /bin/usr &> /dev/null 
     cat file1 file2 > file#if there are no file1,file2, then cat get input from stdin, if there is no >, cat output to the stdout
     cat < file1 #equal to `cat file1`
@@ -102,10 +102,10 @@ Recently I found my Linux foundation rather weak, and felt it cool to have a goo
     ```shell
     # commands used in pipe to process is called filters
     ls /usr/bin | sort | less
-    ls /usr/bin /bin | sort | uniq | less
-    ls /usr/bin /bin | sort | uniq | less | wc -l
+    ls /usr/bin | sort | uniq | less
+    ls /usr/bin | sort | uniq | less | wc -l
     grep pattern filename
-    ls /usr/bin /bin | sort | uniq | grep zip
+    ls /usr/bin | sort | uniq | grep zip
     # grep -i: ignore case grep -v:print lines without pattern
     ls /usr/bin | tail -n 5
     # Attention, many commands don't accept the stdin, for example
