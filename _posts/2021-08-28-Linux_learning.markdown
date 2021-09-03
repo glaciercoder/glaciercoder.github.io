@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title:  "Linux green hand"
 date:   2021-08-28 19:44:39 +0800
@@ -398,13 +399,33 @@ Compress can be lossless or lossy (JPEG or MP3), don not compress these files mo
 # tar(tape archive) is commonly used
 tar mode[options] pathname #mode: c -create x -extract  r -append t -list
 tar cf playground.tar playground
-tar tf playground.tar
-tar xf ../playground.tar
-# All pathnames within the archieve are relative
-
+tar tf playground.tar # list the contents
+tar xf ../playground.tar # extract
+tar rf pathname playground.tar # append
+# All pathnames within the archieve are relative by default
+# When you create or extract, it will by default create the file under present direction
+# tar can extract certain files 
+tar xf ../playgrounds.tar --wildcards 'home/me/playground/dir-*/file-A'
+find playground -name 'file-A' -exec tar rf playground.tar '{}' '+' 
+# for a number of programs, '-' means stdin/stdout
+find playground -name 'file-A' | tar cf - --files-from=- | gzip > playground.tgz # tgz is gzip-compressed tar files
+# can be written as
+find playground -name 'file-A' | tar czf playground.tgz -T - # z for gzip, j for bzip2
 ```
 
+Look at this fantastic usage of pipe
 
+```shell
+ssh remote-sys 'tar cf - Documents' | tar xf -
+```
+
+Unlike `tar`,  `zip` is both a compression tool and an archiver.  `zip` usage is like `tar`
+
+```shell
+zip -r playground.zip playground # zip is essential
+unzip ../playground.zip
+find playground -name "file-A" | zip -@ file-A.zip # use -@ as -T
+```
 
 
 
@@ -428,7 +449,7 @@ grep [options] regex [file...]
  grep -i '^..j.r$' /usr/share/dict/words
  # Bracket expressions
  grep -h '[bg]zip' dirlist*.txt # match between b and g
- grep -h '[^bg]zip' dirlist*.txt #put ^ in the first place in the bracket means negation
+ grep -h '[^bg]zip' dirlist*.txt # put in the first place in the bracket means negation
  grep -h '[A-Z]' dirlist*.txt # character range
  ```
 
