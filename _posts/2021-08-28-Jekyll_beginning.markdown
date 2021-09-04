@@ -1,27 +1,28 @@
 ---
 layout: default
 title:  "Welcome to Jekyll!"
+toc: true
 date:   2021-08-28 18:55:39 +0800
 categories: jekyll
 ---
 
 
 
-## Background
+# Background
 
 This is my first blog stimulated by [suxy15](https://github.com/SuXY15), written to take down the prossess of writing blog using `Jeykll`
 
-### Jekyll and Github Pages
+# Jekyll and Github Pages
 
 Roughly speaking, Jekyll and Github Pages are two different parts. Jekyll is a static website generator like hexo(use html, mardown, etc to generate a new html), while Github Pages is a Github component which uses a repository to generate a user website. But Jekyll is the engine of Github Pages, which makes it convenient to set up a blog using Jekyll on Github. We just edit on our local machine, commit as usual and get our blog. 
 
-### Basics
+# Basics
 
 Basic information about Jekyll can be easily got from the [Jekyll official](https://jekyllrb.com/)
 
 Set up Github Pages can see [Set up  Github Pages with Jekyll](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll)
 
-### Some pitfalls
+# Some pitfalls
 
 However, some pitfalls need to be noticed.
 
@@ -41,6 +42,20 @@ However, some pitfalls need to be noticed.
    which can work properly
 
 
+
+# Make a table of contents
+
+In markdown, we add `[toc]` will generate a table of contents, however, this will not work by default in Jekyll. To make a table of contents check
+
+https://github.com/toshimaru/jekyll-toc
+
+If you are using a gem-based theme
+
+```shell
+bundle info --path minima
+```
+
+will find config files for you theme
 
  
 

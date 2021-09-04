@@ -2,9 +2,14 @@
 
 layout: default
 title:  "Linux green hand"
+toc: true
 date:   2021-08-28 19:44:39 +0800
 categories: Linux
 ---
+
+
+
+
 
 # Background
 
@@ -427,7 +432,7 @@ unzip ../playground.zip
 find playground -name "file-A" | zip -@ file-A.zip # use -@ as -T
 ```
 
-
+**The design for GNU tar is worthy of our attention: unlike other commands which you execute everywhere and just designate an absolute path, tar orders you to cd to where you want this command to take effect. This is designed for security, some hackers may use absolute path in tar to overwrite the files in your root(since tar will not alarm you this) and cause trouble. So always cd to the directory where you want to execute the command. When you must use an absolute path, use `-P` to fulfill this.**
 
 ## Regular Expressions
 
@@ -454,4 +459,43 @@ grep [options] regex [file...]
  ```
 
 
+
+# Script 
+
+There are several script writing skills:
+
+- use long options
+- quote the expansion
+- add the surrounding braces to the variable
+- write `exit num` 
+
+
+
+### Heredoc
+
+"heredoc" is a special format to allow us to redirect multi-lines to a command.
+
+```shell
+ssh user@example.com "touch test1.txt"
+ssh user@example.com "touch test2.txt" 
+# To execute above two commands, we can use a herdoc like :
+ssh user@example.com << EOF
+touch test1.txt
+touch test2.txt
+EOF
+```
+
+ This feature can also be used in script
+
+```shell
+# For readablity, change << to <<- omit the leading tab
+ftp -n <<- EOF
+open $FTP_SERVER
+	user anonymous me@linuxbox
+	cd $FTP_PATH
+	hash
+	get $REMOTE_FILE
+	bye
+	EOF
+```
 

@@ -31,6 +31,7 @@ github_username:  glaciercoder
 theme: jekyll-theme-architect
 plugins:
   - jekyll-feed
+  - jekyll-toc
 
 # Exclude from processing.
 # The following items will not be processed, by default.
