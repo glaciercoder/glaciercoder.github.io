@@ -1,3 +1,10 @@
+---
+layout: default
+title:  "glossay"
+date:   2021-09-05 15:26:39 +0800
+categories: Physics
+---
+
 # Background
 
 To learn optics, some glossary taken down
