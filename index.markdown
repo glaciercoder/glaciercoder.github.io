@@ -12,4 +12,5 @@ layout: default
 # [Linux learning]({{ site.baseurl }}{% link _posts/2021-08-28-Linux_learning.markdown %})
 
 # [Change shell on Linux]({{ site.baseurl }}{% link _posts/2021-08-31-change_shell.markdown %})
+# [Glossary for Optics]({{ site.baseurl }}{% link _posts/2021-09-05-glossary_optics.markdown %})
 
