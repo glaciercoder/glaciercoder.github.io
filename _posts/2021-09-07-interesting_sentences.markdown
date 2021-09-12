@@ -15,7 +15,7 @@ categories: Physics
 
 *"LinuxCNC is user-friendly. It just isn’t promiscuous about which users it’s friendly with."*
 
-​																																						——LinuxCNC wiki
+​																																						 ——LinuxCNC wiki <\br>
 
 *"Do not ask whether a statement is true until you know what it means."*
 
@@ -50,4 +50,8 @@ categories: Physics
 ——Henri Poincare 
 
 (I think it also the art of giving the same thing different names, haha)
+
+*"Thermodynamics is the restrictions on the the possible properties of matter that follow from the symmetry properties of the fundamental laws of physics."*
+
+——Herbert B. Callen
 
