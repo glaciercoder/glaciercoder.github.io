@@ -9,7 +9,11 @@ categories: Physics
 
 To learn optics, some glossary taken down
 
+# QA
 
+Wht candela can be in SI ? https://physics.stackexchange.com/questions/183210/why-is-the-candela-a-base-unit-of-the-si
+
+Aperture stop and field stop https://www.youtube.com/watch?v=_jKHejk45Sg
 
 # Ray optics
 

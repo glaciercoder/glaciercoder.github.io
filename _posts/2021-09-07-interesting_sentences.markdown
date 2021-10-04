@@ -15,7 +15,7 @@ categories: Physics
 
 *"LinuxCNC is user-friendly. It just isn’t promiscuous about which users it’s friendly with."*
 
-​																																						 ——LinuxCNC wiki <\br>
+​																																						 ——LinuxCNC wiki 
 
 *"Do not ask whether a statement is true until you know what it means."*
 
