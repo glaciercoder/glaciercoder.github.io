@@ -42,3 +42,7 @@ layout: default
 # [Interesting Expressions]({{ site.baseurl }}{% link _posts/2021-09-07-interesting_sentences.markdown %})
 
 # [Understanding for a fundamental formula in Theoretical Mechanics ]({{ site.baseurl }}{% link _posts/2021-10-04-Understanding_for_a_fundamental_formula_in_Theoretical_Mechanics.markdown %})
+
+
+
+# [Boys'day]({{ site.baseurl }}{% link _posts/2021-11-13-Boysday.md %})
