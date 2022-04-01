@@ -126,8 +126,10 @@ Step:
 
 # More 
 
+An introduction http://www.360doc.com/content/20/1209/13/72814757_950375263.shtml
+
 More on S Function: https://blog.csdn.net/acelit/article/details/59082349
 
-
+More on car parameters design: https://blog.csdn.net/ERTFYANG/article/details/79872525
 
 、
