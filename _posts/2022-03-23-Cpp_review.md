@@ -211,7 +211,7 @@ A `constexpr` function must have return type and the type of each parameter in b
 
 1. A function’s type is determined by its return type and the types of its parameters. The function’s name is not part of its type. 
 
-2. When we use the name of a function as a value, the function is automatically con- verted to a pointer. This can also be explicitly delcared.
+2. When we use the name of a function as a value, the function is automatically converted to a pointer. This can also be explicitly delcared.
 
    ```cpp
    int (*func) (int&, int&)
@@ -290,9 +290,14 @@ There are several important sets of name-looking-up rule:
 
 ## Static
 
-1. When we define a static member outside the class, we do not repeat the static keyword. The keyword appears only with the declaration inside the class body.
-2. we must define and initialize each static data member outside the class body
-3. we can provide in-class initializers for static members that have const integral type.
+1. Static member functions are not bound to any object; they do not have a `this` pointer.
+
+2. When we define a static member outside the class, we do not repeat the static keyword. The keyword appears only with the declaration inside the class body.
+
+3. we must define and initialize each static data member outside the class body
+
+4. we can provide in-class initializers for static members that have const integral type.
+
 4. The `static const`/`static constexpr` initilizer in class will just result in text substitution, which means ==they are not actually definition==s. So it is always preferred to define them outside with no initilizer:
 
     ```cpp
