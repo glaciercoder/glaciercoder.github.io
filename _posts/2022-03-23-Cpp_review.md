@@ -5,6 +5,10 @@ date:   2022-03-23 14:15:23 +0800
 categories: Programming
 ---
 
+[toc]
+
+
+
 # Background
 
 This is a C++ review based on *C++ primer fifth edition*
@@ -75,7 +79,8 @@ This is a C++ review based on *C++ primer fifth edition*
 
 # Strings, Vectors and arrays
 
-Headers Should Not Include `using` Declarations
+1. Headers Should Not Include `using` Declarations
+2. Initialization using `=` are copy initialization, the others are direct initialization.
 
 ## String
 
@@ -314,3 +319,50 @@ There are several features of implicit type conversion:
 
 1. Only One Class-Type Conversion Is Allowed: implicit class-type conversion doesn't allow other conversions be used again.
 2. Use `explicit` keywork to ban the implicit class-type conversion.
+
+
+
+
+
+# Dynamic Memory
+
+1. The memory consists of three parts: *static*-----used for static data members, *stack*------nonstatic objects defined inside functions, *heap*------objects that they dynamically allocate.
+2. When use built-in pointers, it's worth remembering that the when the pointer is out of scope, the memory is not freed.
+
+## Smart pointers
+
+### `shared_ptr`
+
+The most important thing about smart pointers are their differences from built-in pointers.
+
+1. The ownership of an object can only be shared with another `shared_ptr` by copy constructing or copy assigning its value to another `shared_ptr`. eg.
+
+    ```cpp
+    shared_ptr p = make_shared<int>(42);
+    shared_ptr p1 = p;// copy assigning
+    shared_ptr p2(p);// copy constructing
+    ```
+
+2. Basically, by using `shared_ptr` only, there are not many bugs, however, the method of `shared_ptr` may mess things up, never use `get` to initialize or assign to another smart pointer!
+
+    ```cpp
+    int *q = p.get(); //get() method will return the underlying built-in pointer.
+    {
+      shared_ptr p_temp(q);//use this built-in pointer to construct a smart pointer
+    }
+    int foo = *p; //undefined!!!!!!!! The content of p has been destroyed with the p_temp out of scope
+    ```
+
+3. Since built-in pointers will make unintended sharing, will make unintended deletion, we have the folloing philosophy of `shared_ptr`:
+   -Don’t use the same built-in pointer value to initialize(or reset)more than one smart pointer.
+   
+   - Don’t delete the pointer returned from get().
+   - Don’t use `get()` to initializeor reset another smart pointer.
+   - If you use a pointer returned by `get()`, remember that the pointer will become invalid when the last corresponding smart pointer goes away.
+
+### `unique_ptr`
+
+1. `unique_ptr` is much simpler than `shared_ptr`, it owned its object. Since it can not be assigned and copied, it is much simpler.
+2. The only exception of copying and assigning is we can use a to be destroyed `unique_ptr`.
+3. Both `shared_ptr` and `unique_ptr` can override the default deleter.
+
